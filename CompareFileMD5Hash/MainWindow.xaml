@@ -1,0 +1,35 @@
+﻿<Window x:Class="CompareFileMD5Hash.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompareFileMD5Hash"
+        mc:Ignorable="d"
+        Title="Compare the MD5 Hash" Height="227.099" Width="521.138" Background="White" Foreground="#FFD10875">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="343*"/>
+            <ColumnDefinition Width="144*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="26*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="file1" AllowDrop="true" Drop="file1_Drop" PreviewDragOver="file1_PreviewDragOver" HorizontalAlignment="Left" Height="21" Margin="58,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="file2" AllowDrop="true" Drop="file2_Drop" PreviewDragOver="file2_PreviewDragOver" HorizontalAlignment="Left" Height="23" Margin="58,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Grid.ColumnSpan="2"/>
+        <Button x:Name="file1Button" Content="..." HorizontalAlignment="Left" Margin="116,49,0,0" VerticalAlignment="Top" Width="37" Grid.Column="1" Height="24" Click="file1Chooser" Grid.ColumnSpan="3"/>
+        <Button x:Name="file2Button" Content="..." HorizontalAlignment="Left" Margin="116,86,0,0" VerticalAlignment="Top" Width="37" Grid.Column="1" Height="24" Click="file2Chooser" RenderTransformOrigin="0.093,0.502" Grid.ColumnSpan="3"/>
+        <Label x:Name="label" Content="Compare the MD5 hash." HorizontalAlignment="Left" Margin="15,6,0,0" VerticalAlignment="Top" Height="28" Width="240"/>
+        <Label x:Name="label1" Content="File１" HorizontalAlignment="Left" Margin="15,47,0,0" VerticalAlignment="Top" Height="28" Width="39" />
+        <Label x:Name="label1_Copy" Content="File２" HorizontalAlignment="Left" Margin="15,83,0,0" VerticalAlignment="Top" Height="28" Width="39" />
+        <Button x:Name="doCompare" Content="compare" HorizontalAlignment="Left" Margin="56,132,0,0" VerticalAlignment="Top" Width="97" Height="33" Click="doCompare_Click" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label x:Name="result" Content="{Binding Message}" HorizontalAlignment="Center" Margin="34,132,112,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="339" FontWeight="Bold" Background="{x:Null}" Foreground="#FFD10875" Height="35" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.149"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.404"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+</Window>
