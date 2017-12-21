@@ -26,15 +26,16 @@ namespace CompareFileMD5Hash
         }
 
         private void doCompare_Click(object sender, RoutedEventArgs e) {
-            var isCheck = true;
+            var hasFile1Error = true;
+            var hasFile2Error = true;
             var errMsg = "";
 
             if (file1.Text == string.Empty) {
                 errMsg = "Please select File1.";
-                isCheck = false;
             } else if (!File.Exists(file1.Text)) {
                 errMsg += "The File1 doesn't exist.";
-                isCheck = false;
+            } else {
+                hasFile1Error = false;
             }
 
             if (file2.Text == string.Empty) {
@@ -42,17 +43,18 @@ namespace CompareFileMD5Hash
                     errMsg += "\n";
                 }
                 errMsg += "Please select File2.";
-                isCheck = false;
             } else if (!File.Exists(file2.Text)) {
                 if (errMsg.Length != 0)
                 {
                     errMsg += "\n";
                 }
                 errMsg += "The File2 doesn't exist.";
-                isCheck = false;
+            } else
+            {
+                hasFile2Error = false;
             }
 
-            if (!isCheck) {
+            if (hasFile1Error || hasFile2Error) {
                 result.Content = errMsg;
                 return;
             }
