@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CompareFileMD5Hash"
         mc:Ignorable="d"
-        Title="Compare the MD5 Hash" Height="190.763" Width="521.138" Background="White" Foreground="#FFD10875">
+        Title="Compare the MD5 Hash" Height="243.087" Width="521.138" Background="White" Foreground="#FFD10875">
     <Grid Margin="0,0,2,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="343*"/>
@@ -20,7 +20,7 @@
         <Label x:Name="label1" Content="File１" HorizontalAlignment="Left" Margin="17,17,0,0" VerticalAlignment="Top" Height="28" Width="39" />
         <Label x:Name="label1_Copy" Content="File２" HorizontalAlignment="Left" Margin="17,53,0,0" VerticalAlignment="Top" Height="28" Width="39" />
         <Button x:Name="doCompare" Content="compare" HorizontalAlignment="Left" Margin="58,102,0,0" VerticalAlignment="Top" Width="97" Height="33" Click="doCompare_Click" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <Label x:Name="result" Content="{Binding Message}" HorizontalAlignment="Center" Margin="36,102,110,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="339" FontWeight="Bold" Background="{x:Null}" Foreground="#FFD10875" Height="35" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="result" Content="{Binding Message}" HorizontalAlignment="Center" Margin="36,102,110,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="339" FontWeight="Bold" Background="{x:Null}" Foreground="#FFD10875" Height="95" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
