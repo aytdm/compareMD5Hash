@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Forms;
-using MessageBox = System.Windows.Forms.MessageBox;
 using System.IO;
 using System.Security.Cryptography;
 
@@ -54,20 +53,21 @@ namespace CompareFileMD5Hash
             }
 
             if (!isCheck) {
-                //result.Content = errMsg;
-                MessageBox.Show(errMsg, "Error", MessageBoxButtons.OK);
+                result.Content = errMsg;
                 return;
             }
 
             var file1Hash = MD5Sum(file1.Text);
             var file2Hash = MD5Sum(file2.Text);
+            var resultMsg = "";
+
             if (file1Hash.Equals(file2Hash)) {
-                result.Content = "same md5 hash";
+                resultMsg = "same md5 hash\n\n";
             } else {
-                result.Content = "different md5 hash";
+                resultMsg = "different md5 hash\n\n";
             }
-            string message = "File1："　+ file1Hash + "\n" + "File2：" + file2Hash;
-            MessageBox.Show(message, "MD5 hash", MessageBoxButtons.OK);
+            resultMsg += "File1："　+ file1Hash + "\n" + "File2：" + file2Hash;
+            result.Content = resultMsg;
         }
 
         private String getFileName() {
